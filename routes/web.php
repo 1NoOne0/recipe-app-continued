@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return redirect()->route('login');
 });
-
 // Dashboard route
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -53,13 +52,16 @@ Route::middleware([IsAdmin::class])->group(function () {
 });
 
 // Localization Routes
+
 Route::get('lang/{lang}', function ($lang) {
     if (in_array($lang, ['en', 'es', 'lv'])) {
         session(['applocale' => $lang]);
-        App::setLocale($lang);
+        \Log::info('Session locale set to: ' . session('applocale'));
     }
     return redirect()->back();
 })->name('lang.switch');
+
+
 
 // Logout route with redirection to login page
 Route::post('/logout', function () {

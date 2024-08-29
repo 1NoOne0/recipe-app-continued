@@ -16,16 +16,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- Language Switcher Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ strtoupper(app()->getLocale()) }}
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                    <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">English</a></li>
-                    <li><a class="dropdown-item" href="{{ route('lang.switch', 'es') }}">Español</a></li>
-                    <li><a class="dropdown-item" href="{{ route('lang.switch', 'lv') }}">Latviešu</a></li>
-                </ul>
+                <!-- Language Switcher -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ strtoupper(app()->getLocale()) }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">English</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lang.switch', 'es') }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ route('lang.switch', 'lv') }}">Latviešu</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('recipes.index') }}">{{ __('Recipes') }}</a>
